@@ -1,0 +1,97 @@
+:root {
+    --primary: #bb86fc;
+    --primary-variant: #3700b3;
+    --secondary: #03dac6;
+    --secondary-variant: #03dac6;
+    --background: #121212;
+    --surface: #121212;
+    --error: #cf6679;
+    --on-primary: #000000;
+    --on-secondary: #000000;
+    --on-background: #ffffff;
+    --on-surface: #ffffff;
+    --on-error: #000000;
+    --html-font-family: 'Roboto', 'Segoe UI';
+    --html-font-size: 16px;
+}
+
+.theme-light {
+    --primary: #6200ee;
+    --primary-variant: #3700b3;
+    --secondary: #03dac6;
+    --secondary-variant: #018786;
+    --background: #ffffff;
+    --surface: #ffffff;
+    --error: #b00020;
+    --on-primary: #ffffff;
+    --on-secondary: #000000;
+    --on-background: #000000;
+    --on-surface: #000000;
+    --on-error: #ffffff;
+}
+
+html {
+    font-family: var(--html-font-family); // Font
+    font-size: var(--html-font-size); // Font mérete (16px=12pt)
+    line-height: 1.5; // Sormagasság, 16px*1.5=24px, tipikus mostanában
+    background: var(--background);
+    color: var(--on-background);
+}
+
+html,
+body,
+div {
+    margin: 0; // CSS reset
+    padding: 0; // CSS reset
+    display: grid; // grid-re állunk át mindenhol
+    grid: minmax(0, 1fr) / minmax(0, 1fr); // Az egyetlen gyerek szülő méretű
+}
+
+body {
+    min-height: 100vh; // ablak méretű
+    max-height: 100vh; // ablak méretű
+}
+
+input,
+button,
+a {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border: 0; // ne legyen kerete a buttonnak és az inputnak
+    color: var(--on-background);
+}
+
+input {
+    background: var(--background);
+}
+
+button {
+    padding: 8px 16px; // Tágas
+    background: var(--primary); // Sötét téma
+    font-weight: 600; // Bold
+    border-radius: 7px; // Lekerekített
+    box-shadow: 1px 2px 10px black; // Árnyék
+    transition: all 145ms ease-out; // Átmenet az árnyékra és színre, ami változik
+    opacity: 50%;
+
+    &:hover {
+        background: var(--secondary); // Megváltoztatja a színét, ha fölé visszük az egeret
+        box-shadow: 2px 5px 20px black; // Nagyobb árnyék, ha kiemelkedik
+        opacity: 70%;
+    }
+
+    &:active {
+        box-shadow: none; // Lenyomva nincs árnyék
+        background: var(--secondary-variant); // Megváltoztatja a színét, ha aktiváljuk (lenyomjuk)
+        opacity: 100%;
+    }
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
