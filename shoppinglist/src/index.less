@@ -13,6 +13,9 @@
     --on-error: #000000;
     --html-font-family: 'Roboto', 'Segoe UI';
     --html-font-size: 16px;
+    --button-default-opacity: 50%;
+    --button-hover-opacity: 70%;
+    --button-active-opacity: 100%;
 }
 
 .theme-light {
@@ -28,6 +31,9 @@
     --on-background: #000000;
     --on-surface: #000000;
     --on-error: #ffffff;
+    --button-default-opacity: 100%;
+    --button-hover-opacity: 100%;
+    --button-active-opacity: 100%;
 }
 
 html {
@@ -59,7 +65,7 @@ a {
     font-size: inherit;
     line-height: inherit;
     border: 0; // ne legyen kerete a buttonnak és az inputnak
-    color: var(--on-background);
+    color: var(--on-primary);
 }
 
 input {
@@ -73,18 +79,18 @@ button {
     border-radius: 7px; // Lekerekített
     box-shadow: 1px 2px 10px black; // Árnyék
     transition: all 145ms ease-out; // Átmenet az árnyékra és színre, ami változik
-    opacity: 50%;
+    opacity: var(--button-default-opacity);
 
     &:hover {
         background: var(--secondary); // Megváltoztatja a színét, ha fölé visszük az egeret
         box-shadow: 2px 5px 20px black; // Nagyobb árnyék, ha kiemelkedik
-        opacity: 70%;
+        opacity: var(--button-hover-opacity);
     }
 
     &:active {
         box-shadow: none; // Lenyomva nincs árnyék
         background: var(--secondary-variant); // Megváltoztatja a színét, ha aktiváljuk (lenyomjuk)
-        opacity: 100%;
+        opacity: var(--button-active-opacity);
     }
 }
 
