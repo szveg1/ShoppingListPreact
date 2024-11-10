@@ -1,0 +1,36 @@
+.NewItemModal {
+    position: absolute;
+    width: 70vw;
+    min-height: 60vh;
+    top: 25%;
+    background-color: var(--primary);
+    border-radius: 15px;
+    grid-template-rows: auto 1fr auto;
+
+    .top {
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        justify-items: end;
+        align-content: center;
+
+        h2 {
+            font-size: 3vh;
+            align-content: center;
+            color: var(--on-primary)
+        }
+    }
+
+    .content{
+        grid-template-rows: 1fr 1fr;
+        align-content: space-around;
+        .TextInput{
+            font-size: 5vh;
+        }
+    }
+
+    .bottom {
+        grid-template-columns: 1fr;
+        height: auto;
+        justify-items: end;
+    }
+}
