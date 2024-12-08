@@ -1,15 +1,30 @@
 .ShoppingItemList {
-    border: 10px red;
     width: 100%;
     height: 100%;
     justify-items: center;
+
     .emptyList {
         align-items: center;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: repeat(3, auto);
         height: auto;
+
         h2 {
             font-size: 3vh;
             color: var(--on-background)
         }
+    }
+
+    .list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bottombar {
+        width: 100%;
+        justify-items: end;
+        background-color: var(--background-elevation-1);
     }
 }
