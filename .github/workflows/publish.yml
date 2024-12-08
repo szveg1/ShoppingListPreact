@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # Change this to your default branch if it's not 'main'
 
 jobs:
   build:
@@ -20,12 +20,14 @@ jobs:
 
     - name: Install dependencies
       run: npm install
+      working-directory: ./shoppinglist
 
     - name: Build the app
       run: npm run build
+      working-directory: ./shoppinglist
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+        publish_dir: ./shoppinglist/dist  # Adjust this to your build output directory
