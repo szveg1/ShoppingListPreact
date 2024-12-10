@@ -1,6 +1,4 @@
-/**
- * Represents an item in a shopping list.
- */
+/** Represents an item in a shopping list. */
 export interface ShoppingItem {
     id?: number;
     name: string;

@@ -4,33 +4,23 @@ import { ShoppingItemCard } from "./ShoppingItemCard";
 import { storage } from "./ShoppingItemStorage";
 import { ShoppingItem } from "./ShoppingItem";
 
-/**
- * Props for the ShoppingItemList component.
- */
+/** Props for the `ShoppingItemList` component */
 export type ShoppingItemListProps = {
-    /**
-     * Callback function to handle the event when the add button is clicked.
-     */
+    /** Function to be called when the add button is clicked. */
     onAddClick: () => void;
 
-    /**
-     * Callback function to handle the event when an item is edited.
-     * @param item - The shopping item that is being edited.
-     */
+    /** Function to be called when an item's edit button is clicked. */
     onEditItem: (item: ShoppingItem) => void;
 }
 
 /**
- * Component that renders a list of shopping items.
+ * Renders the list of shopping item's currently in the list.
  * 
- * @param {Readonly<ShoppingItemListProps>} props - The properties for the component.
- * @param {function} props.onAddClick - Callback function to handle the event when the add button is clicked.
- * @param {function} props.onEditItem - Callback function to handle the event when an item is edited.
+ * @param props The props for the component.
+ * @param props.onAddClick Function to be called when the add button is clicked.
+ * @param props.onEditItem Function to be called when an item's edit button is clicked.
  * 
- * @returns {JSX.Element} The rendered component.
- * 
- * The component displays a message and an add button if there are no items.
- * If there are items, it displays a list of `ShoppingItemCard` components and an add button at the bottom.
+ * @returns A list of shopping items, if there are any. Otherwise, a message to add items. 
  */
 export function ShoppingItemList({ onAddClick, onEditItem }: Readonly<ShoppingItemListProps>) {
     let items = storage.getAllItems();

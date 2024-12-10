@@ -3,11 +3,21 @@ import { DarkThemeControl } from "./DarkThemeControl";
 import { ItemSearch } from "./ItemSearch";
 import { ShoppingItem } from "./ShoppingItem";
 
+/** Props for the `TopBar` component. */
 export type TopBarProps = {
+    /** Function to be called when an item is edited. */
     onEditItem: (item: ShoppingItem) => void
 }
 
-export function TopBar({ onEditItem }: TopBarProps) {
+/**
+ * Renders the top bar of the application.
+ * 
+ * @param props The props for the component.
+ * @param props.onEditItem Function to be called when an item is edited.
+ * 
+ * @returns A div element with the top bar. 
+ */
+export function TopBar({ onEditItem }: Readonly<TopBarProps>) {
     return <div class="TopBar">
         <div class="title">
             <h1>Shopping List</h1>

@@ -1,33 +1,35 @@
-import { useState } from "preact/hooks";
 import "./Main.less"
+import { useCallback, useState } from "preact/hooks";
 import { ShoppingItemList } from "./ShoppingItemList";
 import { TopBar } from "./TopBar";
-import { ItemEditor} from "./ItemEditor";
+import { ItemEditor } from "./ItemEditor";
 import { ShoppingItem } from "./ShoppingItem";
+
 
 /**
  * The `Main` component serves as the primary container for the shopping list application.
- * It includes the top bar, the shopping item list, and a modal window for adding new items.
- *
- *
- * @returns {JSX.Element} The rendered main component.
+ * It manages the state for whether the item editor is open and which item is being edited.
+ * 
+ * 
+ * @returns The rendered component.
+ * 
  */
 export function Main() {
     let [isEditorOpen, setEditorOpen] = useState(false)
     let [editedItem, setEditedItem] = useState<ShoppingItem | null>(null)
 
-    let handleEdit = (item: ShoppingItem) => {
+    let handleEdit = useCallback((item: ShoppingItem) => {
         setEditedItem(item)
         setEditorOpen(true)
-    }
+    }, [])
 
-    let handleClose = () => {
-        setEditedItem(null)
+    let handleClose = useCallback(() => {
         setEditorOpen(false)
-    }
+        setEditedItem(null)
+    }, [])
 
     return <div class="Main">
-        <TopBar onEditItem={handleEdit}/>
+        <TopBar onEditItem={handleEdit} />
         <ShoppingItemList onAddClick={() => setEditorOpen(true)} onEditItem={handleEdit} />
         <ItemEditor isOpen={isEditorOpen} onClose={handleClose} editedItem={editedItem} />
     </div>
