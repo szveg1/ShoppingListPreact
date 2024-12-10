@@ -38,9 +38,8 @@ export function ShoppingItemList({ onAddClick, onEditItem }: Readonly<ShoppingIt
     return <div class="ShoppingItemList">
         {
             (!items || items?.length === 0) && <div class="emptyList">
-                <h2>No items yet. You can start adding them by pressing</h2>
-                <IconButton iconName="add" onClick={onAddClick} />
-                <h2>this button.</h2>
+                    No items yet. You can start adding them by pressing this button.
+                    <IconButton iconName="add" onClick={onAddClick} />
             </div>
         }
         {(items && items.length > 0) && <>

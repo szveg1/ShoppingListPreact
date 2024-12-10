@@ -47,7 +47,10 @@ export function ItemEditor({ isOpen, onClose, editedItem }: Readonly<ItemEditorP
             <IconButton iconName="close" onClick={onClose} />
         </div>
         <div class="content">
-            <TextInput placeholder="Item name" value={name} onChange={setName} onEnter={() => { }} />
+            <div class="nameInput">
+                <TextInput placeholder="Item name" value={name} onChange={setName} onEnter={() => { }} />
+            </div>
+            
             <CategoryChooser onCategoryClick={setCategory} selectedCategory={categoryName} />
         </div>
         <div class="bottom">

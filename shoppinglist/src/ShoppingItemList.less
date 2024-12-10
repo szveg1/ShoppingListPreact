@@ -4,13 +4,20 @@
     justify-items: center;
 
     .emptyList {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
         align-items: center;
-        grid-template-columns: repeat(3, auto);
-        height: auto;
 
-        h2 {
-            font-size: 3vh;
-            color: var(--on-background)
+        .IconButton {
+            width: 32px;
+            height: 32px;
+        }
+
+        .buttonWrapper {
+            display: inline-block;
+            margin: 0 4px;
         }
     }
 
@@ -26,5 +33,10 @@
         width: 100%;
         justify-items: end;
         background-color: var(--background-elevation-1);
+
+        .IconButton {
+            width: 32px;
+            height: 32px;
+        }
     }
 }
