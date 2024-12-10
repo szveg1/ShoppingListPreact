@@ -27,7 +27,7 @@ export function Main() {
     }
 
     return <div class="Main">
-        <TopBar />
+        <TopBar onEditItem={handleEdit}/>
         <ShoppingItemList onAddClick={() => setEditorOpen(true)} onEditItem={handleEdit} />
         <ItemEditor isOpen={isEditorOpen} onClose={handleClose} editedItem={editedItem} />
     </div>

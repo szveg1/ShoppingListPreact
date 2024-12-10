@@ -1,10 +1,12 @@
 {
-	"private": true,
+	"home": "https://szveg1.github.io/ShoppingListPreact/",
+	"private": false,
 	"type": "module",
 	"scripts": {
 		"start": "vite",
 		"build": "vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"deploy" : "gh-pages -d dist"
 	},
 	"dependencies": {
 		"dexie": "^4.0.9",
@@ -13,6 +15,7 @@
 	},
 	"devDependencies": {
 		"@preact/preset-vite": "^2.9.0",
+		"gh-pages": "^6.2.0",
 		"less": "^4.2.0",
 		"typescript": "^5.6.3",
 		"vite": "^5.3.3"

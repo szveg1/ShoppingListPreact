@@ -1,0 +1,37 @@
+.ItemSearch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--background);
+    border-radius: 10px;
+    width: 300px;
+    margin: 8px;
+
+    input {
+        width: 100%;
+        border-radius: 10px;
+        color: var(--on-background)
+    }
+
+    ::placeholder {
+        text-align: center;
+    }
+
+    .results { 
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        max-height: 100px;
+
+        .result {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .IconButton {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+}

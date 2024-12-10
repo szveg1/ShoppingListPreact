@@ -33,7 +33,22 @@ class ShoppingItemStorage {
         return items;
     }
 
-    async updateItem(id: number, {name, categoryName, checked} : ShoppingItem) {
+    getAllStartingWith(name: string): ShoppingItem[] {
+        if (name == "") return null
+        const items = useLiveQuery(
+            async () => {
+                const items = await this.#db.shoppingItems
+                    .where("name")
+                    .startsWith(name)
+                    .toArray()
+                return items;
+            },
+            [name]
+        );
+        return items;
+    }
+
+    async updateItem(id: number, { name, categoryName, checked }: ShoppingItem) {
         await this.#db.shoppingItems.put(
             {
                 id,
